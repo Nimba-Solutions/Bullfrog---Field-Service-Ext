@@ -1,0 +1,28 @@
+minimum_cumulusci_version: '3.68.1'
+project:
+    name: Bullfrog---Field-Service-Ext
+    package:
+        name: Bullfrog---Field-Service-Ext
+        api_version: '55.0'
+    git:
+        default_branch: 'main'
+        prefix_feature: 'feature/'
+        prefix_beta: 'beta/'
+        prefix_release: 'release/'
+    source_format: sfdx
+
+tasks:
+    robot:
+        options:
+            suites: robot/Bullfrog---Field-Service-Ext/tests
+            options:
+                outputdir: robot/Bullfrog---Field-Service-Ext/results
+
+    robot_testdoc:
+        options:
+            path: robot/Bullfrog---Field-Service-Ext/tests
+            output: robot/Bullfrog---Field-Service-Ext/doc/Bullfrog---Field-Service-Ext_tests.html
+
+    run_tests:
+        options:
+            required_org_code_coverage_percent: 75
